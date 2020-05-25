@@ -4,8 +4,10 @@ var mysql = require("mysql");
 var connection;
 
 if (process.env.JAWDB_URL) {
+  console.log("jaws: ", process.env);
   connection = mysql.createConnection(process.env.JAWDB_URL);
 } else {
+  console.log("LOCAL: ");
   connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
